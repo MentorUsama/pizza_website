@@ -34,7 +34,6 @@ export default function Pizza({pizza, otherPizzas}) {
                     </div>
                 </div>
             </div>
-            <footer className={styles.footer}><a rel="follow" target="_blank" href="https://www.shanekeenan.dev">Made by Cocoa.</a></footer>
         </div>
     )
 }

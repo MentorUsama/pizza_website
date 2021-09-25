@@ -13,8 +13,6 @@ export default function Layout({children}) {
             <main className={styles.main}>
                 {children}
             </main>
-
-            {/* <footer className={styles.footer}><a rel="follow" target="_blank" href="https://www.shanekeenan.dev">Made by Cocoa.</a></footer> */}
         </div>
     )
 }

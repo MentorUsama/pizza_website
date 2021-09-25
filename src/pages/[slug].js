@@ -39,8 +39,8 @@ export default function Pizza({pizza, otherPizzas}) {
 }
 
 export const getStaticPaths = async () =>{
-    const rest =await fetch('https://my-pizza-backend.herokuapp.com/pizza/')
-    const pizzas=await rest.json();
+    const res = await fetch('https://my-pizza-backend.herokuapp.com/pizza/');
+    const pizzas = await res.json();
     const paths = pizzas.map(pizza => ({
         params: {slug: `${pizza.slug}`}
     }));
@@ -51,10 +51,11 @@ export const getStaticPaths = async () =>{
 }
 
 export const getStaticProps = async ({params}) =>{
-    const rest =await fetch('https://my-pizza-backend.herokuapp.com/pizza/')
-    const pizzas=await rest.json();
+    const res = await fetch('https://my-pizza-backend.herokuapp.com/pizza/');
+    const pizzas = await res.json();
     const pizza = pizzas.filter(pizza => pizza.slug.includes(params.slug));
     const otherPizzas = pizzas.filter(pizza => pizza.slug !== params.slug);
+
     return {
         props: {
             pizza: pizza[0],

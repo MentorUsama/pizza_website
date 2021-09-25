@@ -3,7 +3,9 @@ import styles from './Home.module.css';
 import Link from 'next/link';
 import { useState } from 'react';
 
-export default function Home({pizzas}) {
+export default function Home({ pizzas }) {
+    
+
     const [keyword, setKeyword] = useState('');
 
     const filteredPizzas = pizzas.filter(

@@ -13,6 +13,7 @@ export default function Layout({children}) {
             <main className={styles.main}>
                 {children}
             </main>
+
         </div>
     )
 }

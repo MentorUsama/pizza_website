@@ -4,7 +4,19 @@ import Home from '../components/Home/Home';
 export default function home({ pizzas }) {
   return (
     <Layout>
-      <Home />
+      <Home pizzas={pizzas}/>
     </Layout>
   )
+}
+
+
+
+export const getStaticProps = async ({params}) =>{
+  const rest =await fetch('https://dashboard.heroku.com/apps/my-pizza-backend/settings')
+  const pizzas=await rest.json();
+  return {
+      props: {
+        pizzas: pizzas,
+      }
+  }
 }

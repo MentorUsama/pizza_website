@@ -12,7 +12,7 @@ export default function home({ pizzas }) {
 
 
 export const getStaticProps = async ({params}) =>{
-  const rest =await fetch('https://dashboard.heroku.com/apps/my-pizza-backend/settings')
+  const rest =await fetch('https://my-pizza-backend.herokuapp.com/pizza/')
   const pizzas=await rest.json();
   return {
       props: {

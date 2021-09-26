@@ -9,7 +9,7 @@ export default function home({ pizzas }) {
   )
 }
 
-export const getStaticProps = async ({params}) =>{
+export const getStaticProps = async () =>{
   const res = await fetch('https://my-pizza-backend.herokuapp.com/pizza/');
   const pizzas = await res.json();
 

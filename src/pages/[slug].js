@@ -53,8 +53,9 @@ export const getStaticPaths = async () =>{
 export const getStaticProps = async ({params}) =>{
     const res = await fetch('https://my-pizza-backend.herokuapp.com/pizza/');
     const pizzas = await res.json();
+    console.log(pizzas)
     const pizza = pizzas.filter(pizza => pizza.slug.includes(params.slug));
-    const otherPizzas = pizzas.filter(pizza => pizza.slug !== params.slug);
+    const otherPizzas = pizzas.filter(pizza => pizza.slug !== params.slg);
 
     return {
         props: {
